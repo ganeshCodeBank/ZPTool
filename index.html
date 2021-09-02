@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>AutomationTool</title>
+
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script type="text/javascript" src="js/toolpagejavascript.js"></script>
+
+</head>
+<body>
+
+	<!-- HEADER -->
+	<div class="row header">
+		<div class="col-1">
+			<div class="logo i-hover" id="logo-Id">
+				<!-- <a href="file:///D:/Toolpages/indexPage.html"> -->
+				<img src="D:\Toolpages\Images\projects-logo.png" style="width: 40px;margin: 15px 20px;">
+			</div>
+		</div>	
+		<div class="col-6">
+			<div class="fullview">
+				<i class="fa fa-expand full-view" data-toggle="tooltip" data-placement="bottom" title="Full View" aria-hidden="true" style="color: cadetblue;" id="full-view-Id"></i>
+				<i class="fa fa-bars half-view" data-toggle="tooltip" data-placement="bottom" title="Minimize" aria-hidden="true" style="color: cadetblue;" id="half-view-Id"></i>
+			</div>
+			<div class="half-view">
+				
+			</div>
+			<div class="name">
+				<p class="nameText">AutomationTool</p>
+			</div>
+		</div>
+		<div class="col-5" style="text-align: end;">
+				<div class="dropdown" id="drop">
+  					<button class="dropbtn">
+  						<p class="dwText">Test Type</p>
+  					</button>
+  				<div class="dropdown-content">
+  					<a href="#">Manual Test</a>
+  					<a href="#">Automation Test</a>
+  				</div>
+			</div>
+		</div>
+	</div>
+	<!-- <div id="demo"></div> -->
+	<!-- <div id="jqxLoader">
+    </div> -->
+	<!-- BODY -->
+	<div class="row toolBody">
+		<div class="col-1 col-sm-1 toolmenu">
+			<div class="row">
+				<div class="dashBoard i-hover" id="dash-Id">
+					<i class="fa fa-windows dashboardIcon" aria-hidden="true"></i>
+					<small class="iconText" style="margin-left: 2px;margin-top: -8px;"><b>DashBoard</b></small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="report  i-hover" id="report-Id">
+					<i class="fa fa-line-chart reportIcon" id="repicon" aria-hidden="true"></i>
+					<small class="iconText" style="margin-left: 11px;margin-top: -5px;"><b>Report</b></small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="review  i-hover" id="review-Id">
+					<i class="fa fa-building reviewIcon" aria-hidden="true"></i>
+					<small class="iconText" style="margin-top: -14px;margin-left: 18px;"><b>Build</b></small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="review  i-hover" id="run-Id">
+					<i class="fa fa-pencil-square-o reviewIcon" aria-hidden="true" style="margin-top: 10px;"></i>
+					<small class="iconText" style="margin-top:-13px;margin-left: 11px;"><b>TestRun</b></small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="perform  i-hover" id="perfom-Id">
+					<i class="fa fa-thermometer-full performIcon" aria-hidden="true" style="margin-top: 10px;"></i>
+					<small class="iconText" style="margin-top:-13px;margin-left: 2px;"><b>Performance</b></small>
+				</div><!-- file:///D:/Toolpages/indexPage.html -->
+			</div>
+			<div class="row">
+				<div class="machine  i-hover" id="machine-Id">
+					<i class="fa fa-desktop macineIcon"></i>
+					<small class="iconText" style="margin-top:-10px;margin-left: 9px;"><b>Machine</b></small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="impact  i-hover" id="impact-Id">
+					<i class="fa fa-cog impactIcon"></i>
+					<small class="iconText" style="margin-top:5px;margin-left: 9px;text-align: center;"><b>Impact Analysis</b></small>
+				</div>
+			</div>
+			<div class="row">
+				<div class="Link  i-hover" id="link-Id">
+					<i class="fa fa-link linkIcon" aria-hidden="true" style="margin-top:13px;"></i>
+					<small class="iconText" style="margin-top:-13px;margin-left: 22px;"><b>Link</b></small>
+				</div>
+			</div><!--  -->
+			<div class="row more">
+				<div class="i-hover" id="more-Id">
+					<i class="fa fa-ellipsis-h moreIcon" aria-hidden="true"></i>
+				</div>
+				<div class="more-content">
+					<div class="more-head">
+						<h6>All Apps</h6>
+					</div>
+					<div class="row">
+						<div class="col-6 cnt-txt">
+							<a href="#">CRM</a>
+  							<a href="#">ZohoDesk</a>
+  							<a href="#">ZohoPeople</a>
+  							<a href="#">Invoice</a>
+						</div>
+						<div class="col-6 cnt-txt">
+							<a href="#">Sprint</a>
+		  					<a href="#">ZohoOne</a>
+		  					<a href="#">ZMail</a>
+		  					<a href="#">ZohoCliq</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-11 viewBody">
+			<div class="dashview">
+			<div id="loader"class="center"></div>
+			<div class="row dashMenu">
+				<div class="col-lg-3 col-md-6">
+					<div class="card card-size">
+						<div class=" card mini-card totalCases">
+							<i class="fa fa-file-o fa-2x icon-size" aria-hidden="true"></i>
+						</div>
+						<div class="case-text">
+							<p class="text-secondary text-md-left">Total Test Cases : <b>00</b></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="card card-size">
+						<div class=" card mini-card passedCasses">
+							<i class="fa fa-check fa-2x icon-size" aria-hidden="true"></i>
+						</div>
+						<div class="case-text">
+							<p class="text-secondary text-md-left">Passed Test Cases : <b>00</b></p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="card card-size">
+						<div class=" card mini-card failledCases">
+							<i class="fa fa-exclamation-triangle fa-2x icon-size" aria-hidden="true"></i>
+						</div>
+						<div class="case-text">
+							<p class="text-secondary text-md-left">Failled Test Cases : <b>00</b></p>
+						</div>
+					</div>		
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="card card-size">
+						<div class=" card mini-card add-new">
+							<i class="fa fa-plus fa-2x icon-size" aria-hidden="true"></i>
+						</div>
+						<div class="case-text">
+							<p class="text-secondary text-md-left">Add NewTest Cases : <b>00</b></p>
+						</div>
+					</div>	
+				</div>
+			</div>
+			<div class="row part-report">
+				<div class="col-lg-4 col-md-5">
+					<div class="card en-card">
+						<div class="card en-tit-card">
+							<div class="container">
+								<p class="en-tit-txt">Test Cases Details</p>
+								<p class="en-meci-txt">With Machine Details</p>
+							</div>
+						</div>
+						<div class="testTable container">
+							<table class="table table-hover">
+							  <thead style="color: #fba330;">
+							    <tr>
+							      <th scope="col">Id</th>
+							      <th scope="col">Param</th>
+							      <th scope="col">Value</th>
+							    </tr>
+							  </thead>
+							  <tbody>
+							    <tr>
+							      <th scope="row">1</th>
+							      <td>No of Test Casses</td>
+							      <td>01</td> 
+							    </tr>
+							    <tr>
+							      <th scope="row">2</th>
+							      <td>Url</td>
+							      <td>LocalProjects</td> 
+							    </tr>
+							    <tr>
+							      <th scope="row">3</th>
+							      <td>Passed cases</td>
+							      <td>01</td>  
+							    </tr>
+							    <tr>
+							      <th scope="row">3</th>
+							      <td>Failled cases</td>
+							      <td>00</td>  
+							    </tr>
+							  </tbody>
+							</table>
+						</div>		
+					</div>
+				</div>
+				<div class="dash-rep col-lg-8 col-md-12">
+					<div class="row">
+						<div class="col-lg-6 col-md-12">
+							<div class="card su-card">
+								<div class="card su-tit-card">
+									<div class="container">
+										<p class="pa-tit-txt">Passed Cases Details</p>
+									</div>
+								</div>
+							<div class="testTable container">
+							<table class="table table-hover">
+							  <thead style="color: #47a34be0;">
+							    <tr>
+							      <th scope="col">Case Name</th>
+							      <th scope="col">Value</th>
+							    </tr>
+							  </thead>
+							  <tbody>
+							    <tr>
+							      <td>Name</td>
+							      <td>Pass</td> 
+							    </tr>
+							    <tr>
+							      <td>Name</td>
+							      <td>Pass</td> 
+							    </tr>
+							  </tbody>
+							</table>
+						</div>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-12">
+							<div class="card mi-card">
+								<div class="card mi-tit-card">
+									<div class="container">
+										<p class="pa-tit-txt">Failled Cases Details</p>
+									</div>
+								</div>
+								<div class="testTable container">
+							<table class="table table-hover">
+							  <thead style="color: #e53c38e6;">
+							    <tr>
+							      <th scope="col">Case Name</th>
+							      <th scope="col">Value</th>
+							    </tr>
+							  </thead>
+							  <tbody>
+							    <tr>
+							      <td>Name</td>
+							      <td>Fail</td> 
+							    </tr>
+							    <tr>
+							      <td>Name</td>
+							      <td>Fail</td> 
+							    </tr>
+							  </tbody>
+							</table>
+						</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-lg-6 col-md-12">
+							<div class="card pa-card">
+								<div class="card pa-tit-card">
+									<div class="container">
+										<p class="pa-tit-txt">Environment</p>
+									</div>
+								</div>
+								<div class="testTable container">
+							<table class="table table-hover">
+							  <thead style="color: #f6ad11c7;">
+							    <tr>
+							      <th scope="col">Param</th>
+							      <th scope="col">Value</th>
+							    </tr>
+							  </thead>
+							  <tbody>
+							    <tr>
+							      <td>Os</td>
+							      <td>Linux</td> 
+							    </tr>
+							    <tr>
+							      <td>Url</td>
+							      <td>Localprojects</td> 
+							    </tr>
+							    <tr>
+							      <td>Module</td>
+							      <td>Task</td> 
+							    </tr>
+							  </tbody>
+							</table>
+						</div>
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-12">
+							<div class="card fa-card"><!-- D:\Toolpages\Images\ml.png -->
+								<div class="card fa-tit-card">
+									<div class="container">
+										<p class="pa-tit-txt">Milestone Details</p>
+									</div>
+								</div>
+								<div class="container">
+									<img src="https://e7.pngegg.com/pngimages/370/408/png-clipart-gantt-chart-microsoft-powerpoint-template-timeline-milestone-ppt-template-angle.png" class="mi-img">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="reportView">
+			<div id="loader"class="center"></div>
+			<div class="row repHeader">
+				<div class="col-lg-7 col-sm-12">
+					<div class="card headingName-card">
+						<div class="container name-txt text-secondary">
+							<p style="margin-bottom: 0;"><b>Module Name</b></p>
+							<div class="dropdown show dpd">
+  								<a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ReportType</a>
+  								<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+								   <a class="dropdown-item" href="#">Table Repot</a>
+									<a class="dropdown-item" href="#">Pie Chart</a>
+									<a class="dropdown-item" href="#">Bar Chart</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="card report-card">
+						<div class="rep-text">
+							<p><b>REPORT TABLE</b></p>
+						</div>
+						<hr>
+						<div class="reportTable container">
+							<table class="table table-hover">
+							  <thead style="color: #fba330;" class="thead-dark">
+							    <tr>
+							      <th scope="col">Id</th>
+							      <th scope="col">Case Name</th>
+							      <th scope="col">Description</th>
+							      <th scope="col">Pass</th>
+							      <th scope="col">Faill</th>
+							    </tr>
+							  </thead>
+							  <tbody>
+							    <tr>
+							      <th scope="row">1</th>
+							      <td>Casse 1</td>
+							      <td>Create Title only</td>
+							      <td>✔</td>
+							      <td></td> 
+							    </tr>
+							    <tr>
+							      <th scope="row">2</th>
+							      <td>Casse 2</td>
+							      <td>Title And Owner Name</td> 
+							      <td></td>
+							      <td>✖</td>
+							    </tr>
+							    <tr>
+							      <th scope="row">3</th>
+							      <td>Casse 3</td>
+							      <td>Title with Start Date</td>  
+							      <td>✔</td>
+							      <td></td>
+							    </tr>
+							    <tr>
+							      <th scope="row">4</th>
+							      <td>Casse 4</td>
+							      <td>Title With Start And End date</td>  
+							      <td>✔</td>
+							      <td></td>
+							    </tr>
+							    <tr>
+							      <th scope="row">5</th>
+							      <td>Casse 5</td>
+							      <td>Title With Start And End date</td>  
+							      <td>✔</td>
+							      <td></td>
+							    </tr>
+							    <tr>
+							      <th scope="row">6</th>
+							      <td>Casse 6</td>
+							      <td>Title With Start And End date</td>  
+							      <td>✔</td>
+							      <td></td>
+							    </tr>
+							    <tr>
+							      <th scope="row">7</th>
+							      <td>Casse 7</td>
+							      <td>Title With Start And End date</td>  
+							      <td>✔</td>
+							      <td></td>
+							    </tr>
+							  </tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-5 col-sm-12">
+					<div class="card rep-chart">
+						<div class="chart-text">
+							<p><b>PIE-CHART REPORT</b></p>
+						</div>
+						<hr>
+						<div style="text-align:center;">
+							<img src="https://image.flaticon.com/icons/png/512/138/138339.png" style="width: 200px;height: 200px;">
+						</div>
+					</div>	
+					<div class="card rep-chart1">
+						<div class="chart-text">
+							<p><b>BAR-CHART REPORT</b></p>
+						</div>
+						<hr>
+						<div style="text-align:center;">
+							<img src="https://www.iconpacks.net/icons/1/free-bar-chart-icon-676-thumb.png" style="width: 200px;height: 200px;">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="codeReview">
+			<div id="loader"class="center"></div>
+			<div class="row codeBox">
+				<div class="col-8">
+					<div class="uploadBox">
+						<div class="row">
+							<div class="col-4">
+								<div class="types">
+									<div class="container build-la" style="color: #fa1616;">
+										<div>
+											<p>Module Name</p>
+										</div>
+										<div class="text-ma">
+											<p>Build Type</p>
+										</div>
+										<div class="text-ma">
+											<p>Dependency Module</p>
+										</div>
+										<div class="text-ma">
+											<p>Security Report Needed</p>
+										</div>
+										<div class="text-ma">
+											<p>Build Generate Report Needed</p>
+										</div>
+										<div class="text-ma">
+											<p>SD Deploy Needed</p>
+										</div>
+									</div>	
+								</div>
+							</div>
+							<div class="col-8">
+								<div class="types">
+									<div class="container build-la">
+										<div>
+											<select class="form-control form-control-sm">
+  												<option>Project</option>
+  												<option>Task</option>
+  												<option>Issue</option>
+  												<option>Milestone</option>
+											</select>
+										</div>
+										<div class="row text-ma sele-rdio">
+											<div class="col-3">
+												<div class="form-check">
+													<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+												  	<label class="form-check-label" for="exampleRadios1">Full</label>
+												</div>
+											</div>
+											<div class="col-3">
+												<div class="form-check">
+													<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+												  	<label class="form-check-label" for="exampleRadios1">Window</label>
+												</div>
+											</div>
+											<div class="col-3">
+												<div class="form-check">
+													<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+												  	<label class="form-check-label" for="exampleRadios1">Linux</label>
+												</div>
+											</div>
+											<div class="col-3">
+												<div class="form-check">
+													<input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
+												  	<label class="form-check-label" for="exampleRadios1">Mac Os</label>
+												</div>
+											</div>
+										</div>
+										<div class="text-ma1">
+											<input class="form-control form-control-sm" type="text" placeholder="Enter Dependency Name">
+										</div>
+										<div class="row sele-rdio" style="margin-top: 30px;">
+											<div class="col-4">
+												<div class="form-check form-check-inline">
+													<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+											 		<label class="form-check-label" for="inlineRadio1">Yes</label>
+												</div>
+											</div>
+											<div class="col-4">
+												<div class="form-check form-check-inline">
+													<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+													<label class="form-check-label" for="inlineRadio2">No</label>
+												</div>
+											</div>
+										</div>
+										<div class="row sele-rdio">
+											<div class="col-4">
+												<div class="form-check form-check-inline">
+													<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+											 		<label class="form-check-label" for="inlineRadio1">Yes</label>
+												</div>
+											</div>
+											<div class="col-4">
+												<div class="form-check form-check-inline">
+													<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+													<label class="form-check-label" for="inlineRadio2">No</label>
+												</div>
+											</div>
+										</div>
+										<div class="row sele-rdio">
+											<div class="col-4">
+												<div class="form-check form-check-inline">
+													<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+											 		<label class="form-check-label" for="inlineRadio1">Yes</label>
+												</div>
+											</div>
+											<div class="col-4">
+												<div class="form-check form-check-inline">
+													<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+													<label class="form-check-label" for="inlineRadio2">No</label>
+												</div>
+											</div>
+										</div>
+										<div class="upBtn">
+											<button type="button" class="btn btn-secondary">Build</button>
+										</div>
+									</div>	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-4">
+				</div>
+			</div>
+		</div>
+		<div class="testCode">
+			<div class="row run-form">
+				<div class="form-wi">
+					<form>	
+					<div class="form-group">
+					   <label class="la-name">Build Name</label>
+					   <input type="email" class="form-control bor-cancel " id="exampleFormControlInput1" placeholder="Enter the Build Name">
+					</div>
+					<div class="domain">
+						<label class="la-name">Select Domain</label>
+						<select class="form-control bor-cancel">
+  							<option class="la-name">--Select--</option>
+						</select>
+					</div>
+					<div class="domain">
+						<label class="la-name">Select Machine</label>
+						<select class="form-control bor-cancel">
+  							<option class="opt-font">--Select--</option>
+  							<option class="opt-font">Windows</option>
+  							<option class="opt-font">Linux</option>
+  							<option class="opt-font">Mac Os</option>
+						</select>
+					</div>
+					<div class="browser">
+						<label class="la-name">Number Of Browsers</label>
+						<select class="form-control bor-cancel">
+  							<option class="la-name">--Select--</option>
+						</select>
+					</div>
+					<div class="form-row row">
+						<div class="col-lg-6 col-sm-12 browser">
+							<div class="form-group">
+					   			<label class="la-name">Module Name</label>
+					   			<input type="name" class="form-control bor-cancel " id="exampleFormControlInput1" placeholder="Enter the TesterName">
+							</div>
+						</div>
+					    <div class="col-lg-6 col-sm-12" style="margin-top: 20px;">
+					    	<label class="la-name">Priority</label>
+					    	<select class="form-control bor-cancel">
+  								<option class="la-name">None</option>
+  								<option class="la-name">Low</option>
+  								<option class="la-name">Medium</option>
+  								<option class="la-name">High</option>
+							</select>
+					    </div>
+					</div>
+					<div class="run-btn">
+						<button type="button" class="btn btn-secondary" id="run-btn">Run Test</button>
+					</div>
+				</form>
+				</div>
+			</div>
+		</div>
+		<div class="run-report">
+			<div class="run-table">
+				<div class="runTable container">
+					<table class="table table-hover">
+						<thead style="color: #3dc011;" class="thead-dark">
+							<tr>
+							   <th scope="col">Id</th>
+							   <th scope="col">Tester Name</th>
+							   <th scope="col">Domain</th>
+							   <th scope="col">Machine</th>
+							   <th scope="col">No.OF.Browser</th>
+							   <th scope="col">Build Name</th>
+							   <th scope="col">Priority</th>
+							   <th scope="col">Test%</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+							   	<th scope="row">1</th>
+							   	<td>Tester1</td>
+							   	<td>http//www.demo.com</td>
+							    <td>Linux</td>
+							    <td>3</td>
+							    <td>Demo</td>
+							    <td>Medium</td>
+							    <td>10%</td> 
+							</tr>
+							<tr>
+							    <th scope="row">2</th>
+							   	<td>Tester2</td>
+							   	<td>http//www.demo.com</td>
+							    <td>Windows</td>
+							    <td>3</td>
+							    <td>Demo</td>
+							    <td>Medium</td>
+							    <td>20%</td> 
+							</tr>
+							<tr>
+							    <th scope="row">3</th>
+							   	<td>Tester2</td>
+							   	<td>http//www.demo.com</td>
+							    <td>Windows</td>
+							    <td>3</td>
+							    <td>Demo</td>
+							    <td>Medium</td>
+							    <td>0%</td> 
+							</tr>
+							<tr>
+							    <th scope="row">4</th>
+							   	<td>Tester2</td>
+							   	<td>http//www.demo.com</td>
+							    <td>Windows</td>
+							    <td>3</td>
+							    <td>Demo</td>
+							    <td>Medium</td>
+							    <td>70%</td> 
+						</tbody>
+					</table>
+				</div>
+				<div class="new-run-btn">
+					<button type="button" class="btn btn-secondary" id="new-run">New Test Run</button>
+				</div>
+			</div>
+		</div>
+		<div class="machineView">
+			<div class="row">
+				<div class="col-4">
+					<div class="machine-li">
+						<div class="win-machine">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Windows_logo_-_2012.png" style="width: 210px; margin-top: 20px;">
+						</div>
+						<div class="machine-btn">
+							<button type="button" class="btn btn-secondary" id="new-run">New Test Run</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="machine-li">
+						<div class="linux-machine">
+							<img src="https://clipart-best.com/img/linux/linux-clip-art-43.png" style="width: 210px; margin-top: 20px;">
+						</div>
+						<div class="machine-btn">
+							<button type="button" class="btn btn-secondary" id="new-run">New Test Run</button>
+						</div>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="machine-li">
+						<div class="mac-machine">
+							<img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Icon-Mac.svg" style="width: 210px; margin-top: 20px;">
+						</div>
+						<div class="machine-btn">
+							<button type="button" class="btn btn-secondary" id="new-run">New Test Run</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="linkview">
+			<div class="row">
+				<div class="col-4">
+					<div class="create-li hov-li">
+						<div class="li-txt text-secondary">
+							<p><b>Creator Links</b></p>
+							<hr style="width:80%;margin-left:40px;">
+							<div class="content-li">
+								<a href="#">Add Creator Entry</a>
+								<a href="#">Automation Request Form</a>
+								<a href="#">Current Checkin Status</a>
+								<a href="#">Daily Build Check</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="release-li hov-li">
+						<div class="li-txt text-secondary">
+							<p><b>Release Details</b></p>
+							<hr style="width:80%;margin-left:40px;">
+							<div class="content-li">
+								<a href="#">Completed Test Report</a>
+								<a href="#">Current Build</a>
+								<a href="#">Release Report</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="alarm-li hov-li">
+						<div class="li-txt text-secondary">
+							<p><b>Other Links</b></p>
+							<hr style="width:80%;margin-left:40px;">
+							<div class="content-li">
+								<a href="#">Upload Details</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		document.onreadystatechange = function() {
+			if (document.readyState !== "complete") {
+				//alert(123);
+				document.querySelector("body").style.visibility = "hidden";
+				document.querySelector("#loader").style.visibility = "visible";
+			} 
+			else {
+				document.querySelector("#loader").style.display = "none";
+				document.querySelector("body").style.visibility = "visible";
+			}
+			//alert(123);
+		};
+	</script>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+	<!-- <link href="D:\Toolpages\Script\jQuery-Plugin-For-Animated-Fullscreen-Page-Loader-Intro-Loader\dist\css\introLoader.css" rel="stylesheet">
+	<script src="D:\Toolpages\Script\jQuery-Plugin-For-Animated-Fullscreen-Page-Loader-Intro-Loader\dist\helpers\spin.min.js"></script>
+	<script src="D:\Toolpages\Script\jQuery-Plugin-For-Animated-Fullscreen-Page-Loader-Intro-Loader\dist\jquery.introLoader.js"></script>
+	<script src="D:\Toolpages\Script\jQuery-Plugin-For-Animated-Fullscreen-Page-Loader-Intro-Loader\dist\helpers\jquery.easing.1.3.js"></script>
+ 	-->
+	<!-- <link rel="stylesheet" href="D:\Toolpages\Script\jqwidgets\styles\jqx.base.css" type="text/css" />
+	<link rel="stylesheet" href="D:\Toolpages\Script\jqwidgets\styles\jqx.light.css" type="text/css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1 minimum-scale=1" />	
+    <script type="text/javascript" src="D:\Toolpages\Script\jqwidgets\scripts\jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="D:\Toolpages\Script\jqwidgets\jqxcore.js"></script>
+    <script type="text/javascript" src="D:\Toolpages\Script\jqwidgets\jqxloader.js"></script>
+    <script type="text/javascript" src="D:\Toolpages\Script\jqwidgets\jqxbuttons.js"></script>
+    <script type="text/javascript" src="D:\Toolpages\Script\jqwidgets\scripts\demos.js"></script> -->
+
+</body>
+</html>
